@@ -1,0 +1,337 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%% @Description: 
+ %%%%%%%% @Version: 1.0
+ %%%%%%%% @Author: RankFan
+ %%%%%%%% @Date: 2021-05-30 22:08:12
+ %%%%%%%% @LastEditors: RankFan
+ %%%%%%%% @LastEditTime: 2021-11-08 11:42:15
+ %%%%%%%% @FilePath: \undefinedd:\研究生课程\研二上\劳动经济学\文献综述\Large_Var.tex
+ %%%%%%%% @Email: 1917703489@qq.com
+ %%%%%%%% @Copyright (C) 2021 RankFan. All rights reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{authblk}
+\usepackage{natbib}
+\setcitestyle{authoryear, round}
+% \usepackage{cite}
+
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{xcolor}
+% \usepackage{CJK}
+
+
+\usepackage[UTF8]{ctex}
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry} % 页面边距
+
+% \xeCJKsetup{CJKspace=true}
+% \setCJKmainfont{Adobe 宋体 Std L}
+\setmainfont{TeX Gyre Pagella}
+
+
+\usepackage{hyperref}
+\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=myred,
+			bookmarks, bookmarksnumbered,
+			unicode = true}
+
+
+% \usepackage[bookmarks, bookmarksnumbered ,colorlinks, linkcolor = blue, unicode = true]{hyperref}
+\definecolor{myred}{rgb}{153, 0, 0}
+
+\newcommand*{\email}[1]{%
+	\normalsize\href{mailto:#1}{#1}\par
+}
+\newcommand{\tikzmark}[3][]
+{\tikz[remember picture, baseline]
+	\node [anchor=base, #1](#2) {#3};}
+
+% \setlength{\baselineskip}{20pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\title{Review of Large Time-varying Vector Autoregression Model}
+\author{范小龙 ~ 数量经济学 ~ WISE}
+\affil{ID: 27720201153473 \\ \email{fanxiaolong98@gmail.com} }
+
+\begin{document}
+
+
+\maketitle
+
+The paper mainly reviews the literature of the large time-varying vector autoregression(TVP-VAR).
+Section 1 introduces the basic of VAR, and section 2 introduces the TVP-VAR models, 
+and section 3 introduces further introduced the large TVP-VAR models.
+
+
+% -------------------------------------------------------------------
+\section{VAR}
+
+The vector autoregression model (Vector Autoregression) is a model widely used in economic analysis,
+which could capture complex dynamic interrelationships among macroeconomic variables.
+It is mainly used to analyze multiple macro-time series.
+\cite{sims1980macroeconomics} considered that traditional theories imposed many restrictions,
+and first proposed a VAR model without recognition restrictions. 
+\cite{cooley1985atheoretical} considered that structural recognition should be added to the structural shocks and impulse response of VAR, 
+which caused the structure vector autoregressive (SVAR) was derived.
+The constant VAR model assumes that the coefficients do not change with time, and the macroeconomic characteristics of different eras are varying over time, 
+which makes the model unable to effectively capture the nature of the economic system. 
+Therefore, the research of the VAR model that allows the coefficient to change with time (Time-varying parameter) has begun to emerge.
+
+% -------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------
+\section{Time-varying VAR} 
+
+The time-varying vector autoregression (TVP-VAR) model is under the State space model, which was divided into a Gaussian 
+linear state space model and a nonlinear state space model 
+according to whether the state equation is a linear relationship.
+Stochastic volatility widely used in financial measurement  was firstly proposed by \cite{black1976pricing},
+which has frequently appeared in the empirical analysis of macroeconomics in the past 10 years.
+\cite{primiceri2005time} proposed a time-varying parameter vector autoregression model with stochastic volatility, 
+which is now widely used in empirically macroeconomics research.
+The TVP-VAR model can capture the time-varying characteristics of the economic system. 
+\cite{primiceri2005time} assumes that the  parameters of model are subject to a first-order random walk process, 
+thus temporary and permanent changes in the parameters are allowed.
+The TVP-VAR model expression of \cite{primiceri2005time} is in \eqref{eq1}:
+
+\begin{equation}
+	y_{t}=c_{t}+B_{1, t} y_{t-1}+\ldots+B_{k, t} y_{t-k}+u_{t} \quad t=1, \ldots, T \label{eq1}
+\end{equation}
+
+Where $y_t$ is the observable vector of $n \times 1$, $c_t$ is the time-varying intercept vector of $n \times 1$, 
+and $B_{i,t}$ is the time-varying coefficient of $n \times n$, $u_{i,t}$ is the unobservable shock of $n \times 1$, 
+and its variance-covariance matrix is $ \Omega_{t} $, heteroscedasticity is allowed, 
+and we can get the reduced form of $ \Omega_{t} $:
+
+\begin{equation}
+	A_{t}\Omega_{t}A_{t}^{\prime}  = \Sigma_{t} \Sigma_{t}^{\prime}
+\end{equation}
+
+Where $A_t$ is the lower triangular matrix, and $\Sigma_{t} $ is the diagonal matrix, and
+$\alpha_{ij, t}$ of $A_t$ describes the impact of the $i$th variable on the $j$th variable. 
+\cite{koop2010bayesian} divides TVP-VAR into homogeneous TVP-VAR ($ \Sigma_{t} = \Sigma $) and
+ TVP-VAR with stochastic volatility according to whether $\sigma_{i, t}$ of $\Sigma_{t}$ varies over time.
+
+$$
+\begin{array}{c}
+	A_{t}=\left[\begin{array}{cccc}
+	1 & 0 & \cdots & 0 \\
+	\alpha_{21, t} & 1 & \ddots & \vdots \\
+	\vdots & \ddots & \ddots & 0 \\
+	\alpha_{n 1, t} & \cdots & \alpha_{n n-1, t} & 1
+	\end{array}\right] \quad
+	\Sigma_{t}=\left[\begin{array}{cccc}
+	\sigma_{1, t} & 0 & \cdots & 0 \\
+	0 & \sigma_{2, t} & \ddots & \vdots \\
+	\vdots & \ddots & \ddots & 0 \\
+	0 & \cdots & 0 & \sigma_{n, t}
+	\end{array}\right]
+	\end{array} $$
+
+
+
+Stack the $B_{i,t}$ of \eqref{eq1} into a vector $B_{t}$ whose dimension is $(kn+1)n \times 1$, 
+\eqref{eq1} can be rewritten as \eqref{tvpvar}, where $\otimes$ represents the Kronecker product,
+and $\operatorname{Var}(\varepsilon_{t}) = I_{n}$。
+\begin{equation}
+	\begin{aligned}
+		y_{t} &=X_{t}^{\prime} B_{t}+A_{t}^{-1} \Sigma_{t} \varepsilon_{t} \\
+		X_{t}^{\prime} &=I_{n} \otimes\left[1, y_{t-1}^{\prime}, \ldots, y_{t-k}^{\prime}\right]
+	\end{aligned}
+	\label{tvpvar}
+\end{equation}
+
+$\alpha_{t} = (\alpha_{2,1},\alpha_{3,1} \cdots, \alpha_{k,k-1})^{\prime}$ is a stacked vector of
+the lower-triangular elements,
+and $\sigma_{t}$ is the element on the diagonal in $\Sigma_t$.
+The time-varying coefficients of the model are assumed to satisfy the following equation \eqref{rw}, 
+where $B_{t}$ and $\alpha_{t}$ are assumed to satisfy the random walk process,
+and $\sigma_{t}$ is assumed to satisfy the geometric random walk process, while $\sigma_{t}$ is an unobservable variable.
+\begin{equation}
+	\begin{aligned}
+		B_{t} &=B_{t-1}+\nu_{t} \\
+		\alpha_{t} &=\alpha_{t-1}+\zeta_{t} \\
+		\log \sigma_{t} &=\log \sigma_{t-1}+\eta_{t}
+	\end{aligned}
+	\label{rw}
+\end{equation}
+
+The shocks in the model are assumed to follow the joint normal distribution \eqref{jointdis}, 
+and the dimension of $\alpha_{t}$ is $\frac{n(n-1)}{2}$, and the dimension of  $\sigma_{t}$ is $n\times 1$, 
+and the model needs to estimate the parameters $B_{t}$, $\alpha_{t}$, $\sigma_{t}$ and their variance-covariance matrix. 
+We can find that the number of parameters that need to be estimated will increase exponentially as the number of variables ($n$) increases.
+
+\begin{equation}
+	V=\operatorname{Var}\left(\left[\begin{array}{c}
+		\varepsilon_{t} \\
+		\nu_{t} \\
+		\zeta_{t} \\
+		\eta_{t}
+		\end{array}\right]\right)=\left[\begin{array}{cccc}
+		I_{n} & 0 & 0 & 0 \\
+		0 & Q & 0 & 0 \\
+		0 & 0 & S & 0 \\
+		0 & 0 & 0 & W_{n \times n}
+	\end{array}\right]
+	\label{jointdis}
+\end{equation}
+
+\cite{nakajima2011time} introduced the univariate TVP model and the multivariate TVP model in detail. 
+The univariate TVP model  proposed a new unobservable shock equation, in which the random volatility assumes that AR(1) process,
+and $\sigma_{t}^{2}$ is the element on the diagonal of $\Sigma_t$ in \eqref{nakajima_sv}. 
+The multivariate TVP model uses SVAR as the benchmark model, 
+and other settings are the same as the \cite{primiceri2005time} model The settings are basically the same.
+
+\begin{equation}
+	\sigma_{t}^{2}=\gamma \exp \left(h_{t}\right), \quad h_{t+1}=\phi h_{t}+\eta_{t}, \quad \eta_{t} \sim 
+		N\left(0, \sigma_{\eta}^{2}\right), \quad t=0, \ldots, n-1
+	\label{nakajima_sv}
+\end{equation}
+
+
+\cite{nakajima2011time} used Markov chain Monte Carlo Method(MCMC) method and Kalman Filter to estimate the parameters of the model, 
+sampling $\beta; \alpha; h; \omega$ respectively, where $\beta; \alpha$ is sampled by Kalman Filter; 
+and sampling $h$ by a multi-step moving sampling; $\omega$ including $\Sigma_{\beta},\Sigma_{\alpha},\Sigma_{h}$, 
+which \cite{nakajima2011time} uses MCMC method to estimate. 
+However, the calculation cost of the MCMC method to estimate the parameters will increase exponentially  as the dimensionality increases.
+\cite{koop2013large} used forgetting factors to replace the MCMC methods, which could handle the computation burden.
+
+
+The data generation process of economic variables is related to the impact of time-varying coefficients and stochastic volatility. 
+ The estimated values of the parameters can only be obtained through approximate solutions
+ since the analytic expression of the likelihood function of random volatility is difficult to obtain,
+The TVP-VAR model can use MCMC method for parameter estimation for low-dimensional variables under the Bayesian framework. 
+\cite{koop2010bayesian} considers that a large number of parameters in the time-varying coefficients VAR model may make the estimation over-fitting. 
+\cite{banbura2010large} shows that VAR with Bayesian shrinkage is an appropriate tool for large dynamic models. 
+Soft and hard constraints can effectively solve these problems in the Bayesian method. 
+The soft limit is to shrink the model parameters (Shrinkage) to a specific value, generally set to 0, 
+thereby reducing the computational complexity of the model parameters; the hard limit relates to the exact model theoretical restriction.
+
+
+% -------------------------------------------------------------------
+
+
+
+% -------------------------------------------------------------------
+\section{Large Time-varying VAR}
+
+Large-dimensions time-varying coefficient VAR model can accommodate more economic variables into economic system analysis,
+but it also increases the complexity of parameter estimation.
+Big data $\footnote{ \cite{varian2014big} thinks that big data includes Tall Data and Fat Fata, 
+and Tall Data means more numbers of observations than  explanatory variables, and Fat Data means more explanatory variables.}$
+may change the foundation of empirical macroeconomics. 
+More information in big data will improve the predictive ability of the model and help us better understand the macroeconomics. 
+\cite{koop2017bayesian} believes that in the era of big data, current research faces three major challenges: 
+a large number of explanatory variables; a large number of dependent variables; a large number of model parameters that change over time.
+\cite{koop2016bayesian} believes that the model inference obtained by processing fat data using traditional methods 
+(Bayesian method without prior information, MLE, etc.) is inaccurate. 
+\cite{banbura2010large} consider Bayesian VAR is a valid alternative to factor models or panel VARs for the analysis of large dynamic systems.
+When the number of explanatory variables is more than the number of observations, 
+the least squares regression (OLS) is invalid. When we use the new method, we are facing a new problem: model uncertainty, 
+there are $2^{K}$ models that contain these explanatory variables for K explanatory variables. 
+When we select only the best model and ignore other models, it will inevitably lead to inaccurate model parameters.
+
+
+The Bayesian estimation method uses prior information with data information to estimate model parameters. 
+Dense parameterization will lead to unsound inferences and inaccurate out-of-sample predictions. 
+\cite{koop2017bayesian} believes that the use of Bayesian methods can solve the above problems (over parameterization and calculation problems). 
+Bayesian methods can use prior information to provide a method for shrinkage of parameters.
+The setting of the prior (Prior) is crucial to the estimation of the parameters, and nany prior parameter shrinkages are data-driven; 
+\cite{giannone2015prior} introduced the choice of prior information for the VAR model. 
+\cite{giannone2015prior}, \cite{koop2010bayesian} and \cite{chan2020large} introduced 
+the details of the minnesota prior, natural conjugate priors and Stochastic Search Variable Selection (SSVS). 
+
+The Minnesota prior appeared a recent boom in popularity because of its simplicity and success in many applications.
+\cite{koop2010bayesian} considers the big advantage of the Minnesota prior was that 
+it leads to simple posterior inference involving only the Gaussian distribution.
+\cite{karlsson2013forecasting} considers the Minnesota prior captures widely held beliefs about the long run properties of the data.
+Natural conjugate priors lead to analytical results, which can greatly reduce the computational burden.
+The natural conjugate prior does not allow us to use prior information of this more lagged form.
+SSVS often used with Fat Data specifies a hierarchical prior which is a mixture of two Normal distributions, 
+while LASSO is just a different Normal hierarchical prior for the regression coefficients in \cite{koop2016bayesian}.
+
+
+Bayesian approach allow for the uncertainty of models, which means entire forecasting model to vary over time.
+Bayes Model Average (BMA) and Dynamic Model Average (DMA) are effective methods for solving uncertainty of models. 
+The posterior probability of the model is weighted with the model, which means that the model will change over time.
+\cite{koop2012forecasting} rewrite TVP-VAR under DMA setting to \eqref{bma_tvpvar}, 
+which set $z_{t}$ of different model(k) as explanatory variables, we can get $ M = 2^{K} $ models, Where $ k=1,2, \cdots, M$.
+
+\begin{equation}
+	\begin{aligned}
+		y_{t} &=z_{t}^{(k)} \theta_{t}^{(k)}+\varepsilon_{t}^{(k)} \\
+		\theta_{t+1}^{(k)} &=\theta_{t}^{(k)}+\eta_{t}^{(k)}
+	\end{aligned}
+	\label{bma_tvpvar}
+\end{equation}
+
+
+The standard Bayesian approach to model selection is based on the marginal likelihood.
+\cite{andersson2008bayesian} suggest replacing the marginal likelihood with the predictive likelihood for the variables of interest,
+which implies to calculate  the posterior probabilities or model weights.
+We regard the models as a random variable, which means obtaining the expectation of the estimated parameters for the model.
+Where $ p\left(M_{r}\mid y\right)$ in \eqref{model_por} is the posterior probability of the model, 
+$p\left(\phi \mid y, M_{k}\right)$ in \eqref{model_por}   is the estimated parameter under each model The posterior probability, 
+$p(\phi\mid y)$ in \eqref{model_por}  is the posterior probability of the estimated parameters after the model is averaged.
+The model k will receive more weight at time t if it has forecast well in the recent past.
+
+\begin{equation}
+	p(\phi \mid y)=\sum_{r=1}^{M} p\left(\phi \mid y, M_{k}\right) p\left(M_{k} \mid y\right)
+	\label{model_por}
+\end{equation}
+
+\cite{raftery2010online} improved Kalman filtering proceeds by using forgetting factor($\lambda $)  replaced by \eqref{forgetting}, 
+which could reduce computational burden from $K^T$ times to $K$ times,
+and we always consider $\lambda \in (0.95, 0.99) $ in  our empirical work.
+\cite{koop2013large} used forgetting factor to select the optimal value of the shrinkage parameter at different points in time 
+and the dimension of the TVP-VAR models. 
+\begin{equation}
+	Q_{t}=\left(1-\lambda^{-1}\right) \Sigma_{t-1 \mid t-1}
+	\label{forgetting}
+\end{equation}
+
+\cite{koop2012forecasting} consider
+stochastic volatility or ARCH specification for $H_t^{(k)}$, 
+which greatly  added to the computational burden, thus they used Exponentially Weighted Moving Average (EWMA) estimator,
+which was commonly used to model time-varying volatilities in finance.
+\cite{koop2013large} draw on ideas from the DMA  which achieve
+reductions in the computational burden through the use forgetting factors for high-dimensions variables,
+and the parameters of the shrinkage priors commonly-used with large VAR models.
+
+How should we compare the performance of different models of VAR? \cite{chan2018bayesian} 
+improved the importance sampling method with calculating the marginal likelihood and
+deviance information criterion (DIC) of the time-varying coefficient vector as Bayesian model criterion, and comparing the performance between 
+TVP-VAR and the constant coefficient model based on these two standards.
+\cite{chan2018bayesian} found that the  constant VAR model with stochastic volatility performs better than the TVP-VAR model with stochastic volatility.
+
+
+What is the future development direction of TVP-VAR?  I think the answer is that both the computational speed, 
+accuracy of  approximation and the specification of the TVP-VAR models.
+\cite{koop2013large} developed methods for estimation and forecasting in large TVP-VAR models, which allowed for model switching.
+\cite{chan2018bayesian} did not rule out the possibility that the VAR model of some coefficients may be constant, 
+while some other coefficients may be time-varying coefficients performs better.
+\cite{koop2019forecasting} proposed methods for estimating and forecasting in Bayesian panel vector autoregressions (PVAR)
+of large dimensions with time-varying parameters and stochastic volatility. 
+\cite{koop2020bayesian} proposed a variational Bayesian  method for computationally efficient
+posterior and predictive inference in time-varying parameters models, and specified a new dynamic variable/model selection strategy for TVP
+models with the presence of Fat Data. 
+
+
+% \cite{nakajima2012bayesiansq}
+
+% -------------------------------------------------------------------
+
+
+% \section{高维应用}
+
+% 高维技巧：\cite{varian2014big}
+
+% \bibliographystyle{plain}
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{ref}  
+
+% \bibliographystyle{unsrtnat}
+% \bibliography{ref}
+
+\end{document}

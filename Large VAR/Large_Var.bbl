@@ -1,0 +1,128 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Andersson and Karlsson(2008)]{andersson2008bayesian}
+Michael~K Andersson and Sune Karlsson.
+\newblock \emph{Bayesian forecast combination for VAR models}.
+\newblock Emerald Group Publishing Limited, 2008.
+
+\bibitem[Ba{\'n}bura et~al.(2010)Ba{\'n}bura, Giannone, and
+  Reichlin]{banbura2010large}
+Marta Ba{\'n}bura, Domenico Giannone, and Lucrezia Reichlin.
+\newblock Large bayesian vector auto regressions.
+\newblock \emph{Journal of applied Econometrics}, 25\penalty0 (1):\penalty0
+  71--92, 2010.
+
+\bibitem[Black(1976)]{black1976pricing}
+Fischer Black.
+\newblock The pricing of commodity contracts.
+\newblock \emph{Journal of financial economics}, 3\penalty0 (1-2):\penalty0
+  167--179, 1976.
+
+\bibitem[Chan(2020)]{chan2020large}
+Joshua~CC Chan.
+\newblock Large bayesian vector autoregressions.
+\newblock In \emph{Macroeconomic Forecasting in the Era of Big Data}, pages
+  95--125. Springer, 2020.
+
+\bibitem[Chan and Eisenstat(2018)]{chan2018bayesian}
+Joshua~CC Chan and Eric Eisenstat.
+\newblock Bayesian model comparison for time-varying parameter vars with
+  stochastic volatility.
+\newblock \emph{Journal of Applied Econometrics}, 33\penalty0 (4):\penalty0
+  509--532, 2018.
+
+\bibitem[Cooley and LeRoy(1985)]{cooley1985atheoretical}
+Thomas~F Cooley and Stephen~F LeRoy.
+\newblock Atheoretical macroeconometrics: a critique.
+\newblock \emph{Journal of Monetary Economics}, 16\penalty0 (3):\penalty0
+  283--308, 1985.
+
+\bibitem[Giannone et~al.(2015)Giannone, Lenza, and
+  Primiceri]{giannone2015prior}
+Domenico Giannone, Michele Lenza, and Giorgio~E Primiceri.
+\newblock Prior selection for vector autoregressions.
+\newblock \emph{Review of Economics and Statistics}, 97\penalty0 (2):\penalty0
+  436--451, 2015.
+
+\bibitem[Karlsson(2013)]{karlsson2013forecasting}
+Sune Karlsson.
+\newblock Forecasting with bayesian vector autoregression.
+\newblock \emph{Handbook of economic forecasting}, 2:\penalty0 791--897, 2013.
+
+\bibitem[Koop(2016)]{koop2016bayesian}
+Gary Koop.
+\newblock Bayesian methods for fat data.
+\newblock \emph{Manuscript available at: garykoop/research}, 2016.
+
+\bibitem[Koop(2017)]{koop2017bayesian}
+Gary Koop.
+\newblock Bayesian methods for empirical macroeconomics with big data.
+\newblock \emph{Review of Economic Analysis}, 9\penalty0 (1):\penalty0 33--56,
+  2017.
+
+\bibitem[Koop and Korobilis(2010)]{koop2010bayesian}
+Gary Koop and Dimitris Korobilis.
+\newblock \emph{Bayesian multivariate time series methods for empirical
+  macroeconomics}.
+\newblock Now Publishers Inc, 2010.
+
+\bibitem[Koop and Korobilis(2012)]{koop2012forecasting}
+Gary Koop and Dimitris Korobilis.
+\newblock Forecasting inflation using dynamic model averaging.
+\newblock \emph{International Economic Review}, 53\penalty0 (3):\penalty0
+  867--886, 2012.
+
+\bibitem[Koop and Korobilis(2013)]{koop2013large}
+Gary Koop and Dimitris Korobilis.
+\newblock Large time-varying parameter vars.
+\newblock \emph{Journal of Econometrics}, 177\penalty0 (2):\penalty0 185--198,
+  2013.
+
+\bibitem[Koop and Korobilis(2019)]{koop2019forecasting}
+Gary Koop and Dimitris Korobilis.
+\newblock Forecasting with high-dimensional panel vars.
+\newblock \emph{Oxford Bulletin of Economics and Statistics}, 81\penalty0
+  (5):\penalty0 937--959, 2019.
+
+\bibitem[Koop and Korobilis(2020)]{koop2020bayesian}
+Gary Koop and Dimitris Korobilis.
+\newblock Bayesian dynamic variable selection in high dimensions.
+\newblock \emph{Available at SSRN 3246472}, 2020.
+
+\bibitem[Nakajima et~al.(2011)]{nakajima2011time}
+Jouchi Nakajima et~al.
+\newblock Time-varying parameter var model with stochastic volatility: An
+  overview of methodology and empirical applications.
+\newblock 2011.
+
+\bibitem[Primiceri(2005)]{primiceri2005time}
+Giorgio~E Primiceri.
+\newblock Time varying structural vector autoregressions and monetary policy.
+\newblock \emph{The Review of Economic Studies}, 72\penalty0 (3):\penalty0
+  821--852, 2005.
+
+\bibitem[Raftery et~al.(2010)Raftery, K{\'a}rn{\`y}, and
+  Ettler]{raftery2010online}
+Adrian~E Raftery, Miroslav K{\'a}rn{\`y}, and Pavel Ettler.
+\newblock Online prediction under model uncertainty via dynamic model
+  averaging: Application to a cold rolling mill.
+\newblock \emph{Technometrics}, 52\penalty0 (1):\penalty0 52--66, 2010.
+
+\bibitem[Sims(1980)]{sims1980macroeconomics}
+Christopher~A Sims.
+\newblock Macroeconomics and reality.
+\newblock \emph{Econometrica: journal of the Econometric Society}, pages 1--48,
+  1980.
+
+\bibitem[Varian(2014)]{varian2014big}
+Hal~R Varian.
+\newblock Big data: New tricks for econometrics.
+\newblock \emph{Journal of Economic Perspectives}, 28\penalty0 (2):\penalty0
+  3--28, 2014.
+
+\end{thebibliography}
