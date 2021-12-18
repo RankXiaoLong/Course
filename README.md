@@ -1,2 +1,3 @@
-# VAR
-My research
+# Course
+- My research： Large VAR
+- TSA(pre): RT Grach
