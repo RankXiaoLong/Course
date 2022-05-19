@@ -1,0 +1,2 @@
+- [微信推文：Large TVP VAR](https://mp.weixin.qq.com/s/_DwBxcNN527CvqU0-EjhTw)
+- [B站：large TVP VAR](https://www.bilibili.com/video/BV1KY411F7tH?spm_id_from=333.999.0.0)
